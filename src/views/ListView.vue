@@ -1,44 +1,19 @@
 <template>
     <div class="flex flex-col container mx-auto p-4">
-        <div class="flex gap-2 mb-4">
-            <input class="border rounded p-1" v-model="newTodo" placeholder="Add a new task" />
-            <button @click="addNewTodo" class="px-3 py-1 bg-green-500 rounded text-black">Add</button>
-        </div>
-        
-        <h1 class="py-4 text-2xl font-bold">TODO list</h1>
-        <ul>
-            <li class="flex gap-4 pt-2" v-for="(todo, index) in todoStore.todos" :key="index">
-                <input type="checkbox" @change="toggleTodo(index)" />
-                <p>{{ todo.text }}</p>
-                <button class="px-3 py-1 bg-red-500 rounded text-white" @click="removeTodo(index)">remove</button>
-            </li>
-        </ul>
+        <AddInput />
+
+        <List />
     </div>
 </template>
 
 <script>
-    import { ref } from 'vue';
-    import { useTodoStore } from '@/store/todoStore';
+    import AddInput from '../components/AddInput.vue';
+    import List from '../components/List.vue';
+
     export default {
-        setup() {
-            const todoStore = useTodoStore();
-            const newTodo = ref('');
-
-            const addNewTodo = () => {
-                if (newTodo.value.trim()) {
-                    todoStore.addTodo(newTodo.value.trim());
-                    newTodo.value = '';
-                }
-            };
-            const removeTodo = (index) => {
-                todoStore.removeTodo(index);
-            };
-
-            const toggleTodo = (index) => {
-                todoStore.toggleTodo(index);
-            };
-
-            return { newTodo, addNewTodo, removeTodo, toggleTodo, todoStore };
-        }
+        components: {
+            List,
+            AddInput
+        },
     }
 </script>
