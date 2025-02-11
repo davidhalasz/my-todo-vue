@@ -1,7 +1,7 @@
 <template>
-    <div class="flex gap-2 mb-4">
-        <input class="border rounded p-1 placeholder:text-gray-500" v-model="newTodo" placeholder="Add a new task" />
-        <button @click="addNewTodo" class="px-3 py-1 bg-green-500 rounded text-black">Add</button>
+    <div class="flex items-center gap-2 mb-4">
+        <input class="grow border rounded p-1 placeholder:text-gray-500" v-model="newTodo" placeholder="Add a new task" />
+        <button @click="addNewTodo" class="flex-none px-3 py-1 bg-green-500 rounded text-black">Add</button>
     </div>
 </template>
 

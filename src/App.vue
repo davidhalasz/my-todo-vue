@@ -1,13 +1,12 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
 import ListView from './views/ListView.vue'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
+  
+    <div class="w-full container justif-center  mx-auto p-4">
      <ListView />
     </div>
-  </header>
+ 
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col container mx-auto p-4">
+    <div class="flex flex-col w-full justify-center  mx-auto p-4">
         <AddInput />
 
         <List />
